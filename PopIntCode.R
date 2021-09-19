@@ -1,4 +1,4 @@
-annualplant<-function(lambda=1.15301738,ES=0,perre,years=10,ExTh=40){
+annualplant<-function(lambda=1.15301738,ES=0,Nstart=1000,years=10,ExTh=40){
   Nall<-matrix(0,years,1000)
   for(i in 1:1000){
     N<-log(Nstart)
@@ -113,26 +113,5 @@ par(mfrow=c(1,4))
 }
 
 
-
-
-
-
-###########Make Figure##########################
-
-layout(matrix(c(1,2,3,4,5,5,5,5),2,4, byrow = T))
-par(mar=c(3,1,4.1,2.1))
-barplot(stagemat[1,]/sum(stagemat[1,]),horiz=TRUE, xlim=c(0,2), main="Year 1", xlab='Count',xaxt='n', col="steelblue",space=0 )
-axis(side=1,labels=F) 
-mtext(1,-1)
-barplot(stagemat[2,]/sum(stagemat[2,]),horiz=TRUE , xlim=c(0,2),main="Year 2",xlab='Count',xaxt='n',col="steelblue",space=0  )
-axis(side=1,labels=F) 
-barplot(stagemat[5,]/sum(stagemat[5,]),horiz=TRUE, xlim=c(0,2),main="Year 5" ,xlab='Count' ,xaxt='n',col="steelblue",space=0 )
-axis(side=1,labels=F) 
-barplot(stagemat[10,]/sum(stagemat[10,]),horiz=TRUE, xlim=c(0,2),main="Year 10",xlab='Count',xaxt='n' ,col="steelblue",space=0  )
-axis(side=1,labels=F) 
-par(mar=c(5.1,5.1,1,2.1))
-plot(apply(stagemat,1,sum)[1:10], type='l', lwd=3,ylab="Population Density", xlab="Years", cex.lab=1.5, log='y' )
-abline(h=apply(stagemat,1,sum)[1], col="red", lty=2,lwd=2)
-axis(side=2,labels=F) 
 
 
