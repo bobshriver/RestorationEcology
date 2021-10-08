@@ -1,3 +1,2 @@
-install.packages("tidyverse")
+install.packages("mvtnorm")
 
-source("PopIntCode.R")
