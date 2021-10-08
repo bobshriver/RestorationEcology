@@ -34,6 +34,6 @@ CIfunction<-function(){
   }
   plot(1:22,ylim=c(0,1.5),col='white', ylab='NDVI', xlab='Site')
   abline(h=Ref, col='Red', lwd=2)
-  arrows(1:22,y0=CIOut[,1],y1=CIout[,2],length=0,lwd=1.5)
+  arrows(1:22,y0=CIOut[,1],y1=CIOut[,2],length=0,lwd=1.5)
   
 }
