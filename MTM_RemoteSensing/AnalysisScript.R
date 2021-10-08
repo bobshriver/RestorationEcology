@@ -1,7 +1,8 @@
 
 library(mvtnorm)
 
-MineDataMessy<-read.csv('Mine_NDVIData.csv') ##This function will read in our dataset
+
+MineDataMessy<-read.csv('MTM_RemoteSensing/Mine_NDVIData.csv') ##This function will read in our dataset
 Ref<-0.862180708
 
   ###Now we will clean up an realign our data###
