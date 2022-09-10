@@ -28,7 +28,7 @@ ORDplot<-function(ellipse=F){
 
 plot(poe.mds, type = "n") #displays empty ordination space
 points(poe.mds, display = "sites", pch = c(16, 8) [as.numeric(rep(c(1,2),each=4))], col = c("green", "black") [rep(c(1,2),each=4)]) # displays site points wher
-legend("topright", legend = c('Unburned',"Burned"), pch = c(16, 8), col = c("green", "black"), bty = "n", cex = 1) #
+legend("topright", legend = c('Reference',"Burned,Seeded"), pch = c(16, 8), col = c("green", "black"), bty = "n", cex = 1) #
 if (ellipse==T) {ordiellipse(poe.mds, groups = as.numeric(rep(c(1,2),each=4)), draw = "polygon", lty = 1, col = "grey90")}
 }
 
