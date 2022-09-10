@@ -12,7 +12,7 @@ data <- matrix(nrow = length(samples), ncol = length(taxa), dimnames = list(samp
 
 for(r in 1:nrow(MessyData)){
   samp <- MessyData[r, 3]
-  tax <- MessyData[r, 1]
+  tax <- as.character(MessyData[r, 1])
   data[samp,tax] <- MessyData[r, 2]
 } # 1, 2, 3 here relate the the column number in the raw data in which the sample name, species name and data are in
 
