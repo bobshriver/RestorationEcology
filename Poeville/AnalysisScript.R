@@ -1,9 +1,19 @@
 
+install.packages("vegan")
+install.packages("dplyr")
+install.packages("rstudioapi")
+
+
 library(vegan)
 library(dplyr)
+library(rstudioapi)
 
-MessyData<-read.csv('Poeville/Data.csv') ##This function will read in our dataset
-MessyData<-MessyData[1:200,c(1:4)]
+# Getting the path of your current open file
+current_path = rstudioapi::getActiveDocumentContext()$path 
+setwd(dirname(current_path ))
+
+MessyData<-read.csv('PoevilleData2023.csv') ##This function will read in our dataset
+MessyData<-MessyData[1:119,c(1:4)]
 taxa <- unique(MessyData$species) #creates list of each unique species
 samples <- sort(unique(MessyData$sample)) #creates list of each unique site or sample
 
@@ -21,14 +31,14 @@ data[is.na(data)] <- 0   #convert NA's to 0
 data <- as.data.frame(data)
 
 
-poe.mds <- metaMDS(data, distance = "bray", autotransform = FALSE)
+poe.mds <- metaMDS(data, distance = "bray")
 
 
 ORDplot<-function(ellipse=F){
 
 plot(poe.mds, type = "n") #displays empty ordination space
-points(poe.mds, display = "sites", pch = c(16, 8) [as.numeric(rep(c(1,2),each=6))], col = c("green", "black") [rep(c(1,2),each=6)]) # displays site points wher
+points(poe.mds, display = "sites", pch = c(16, 8) [as.numeric(rep(c(1,2),each=4))], col = c("green", "black") [rep(c(1,2),each=4)]) # displays site points wher
 legend("topright", legend = c('Reference',"Burned,Seeded"), pch = c(16, 8), col = c("green", "black"), bty = "n", cex = 1) #
-if (ellipse==T) {ordiellipse(poe.mds, groups = as.numeric(rep(c(1,2),each=6)), draw = "polygon", lty = 1, col = "grey90")}
+if (ellipse==T) {ordiellipse(poe.mds, groups = as.numeric(rep(c(1,2),each=4)), draw = "polygon", lty = 1, col = "grey90")}
 }
 
