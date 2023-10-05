@@ -13,7 +13,7 @@ current_path = rstudioapi::getActiveDocumentContext()$path
 setwd(dirname(current_path ))
 
 MessyData<-read.csv('PoevilleData2023.csv') ##This function will read in our dataset
-MessyData<-MessyData[1:119,c(1:4)]
+MessyData<-MessyData[1:118,c(1:4)]
 taxa <- unique(MessyData$species) #creates list of each unique species
 samples <- sort(unique(MessyData$sample)) #creates list of each unique site or sample
 
