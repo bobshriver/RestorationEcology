@@ -1,7 +1,7 @@
 
-install.packages("vegan")
-install.packages("dplyr")
-install.packages("rstudioapi")
+install.packages("vegan", dependencies = T)
+install.packages("dplyr",dependencies = T)
+install.packages("rstudioapi",dependencies = T)
 
 
 library(vegan)
