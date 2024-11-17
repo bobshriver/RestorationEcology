@@ -1,8 +1,11 @@
-
+install.packages('mvtnorm', dependencies = T)
 library(mvtnorm)
 
 
-MineDataMessy<-read.csv('MTM_RemoteSensing/Mine_NDVIData.csv') ##This function will read in our dataset
+# Getting the path of your current open file
+current_path = rstudioapi::getActiveDocumentContext()$path 
+setwd(dirname(current_path ))
+MineDataMessy<-read.csv('Mine_NDVIData.csv') ##This function will read in our dataset
 Ref<-0.862180708
 
   ###Now we will clean up an realign our data###
