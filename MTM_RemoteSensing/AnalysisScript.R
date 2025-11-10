@@ -1,4 +1,6 @@
 install.packages('mvtnorm', dependencies = T)
+install.packages('rstudioapi', dependencies = T)
+
 library(mvtnorm)
 
 
